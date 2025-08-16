@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESUME</title>
+    <link rel="icon" type="image/png" href="main.jpg">
+</head>
+<body>
+
+<header> 
+    <nav>
+        <div class="nav-container">   
+            <div class="logo">
+                <span>PAULO</span>
+            </div>
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Skills</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+            </div>
+            <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
+        </div>
+
+        <div class="dropdown" id="dropdown">
+            <div class="links">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Skills</a>
+                <a href="#">Services</a>
+                <a href="#">Contact</a>
+                <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<section>   
+    <div class="main-container">
+        <div class="image">
+            <img src="main.jpg" alt="Paulo">
+        </div>
+
+        <div class="content">
+            <h1 data-aos="fade-left">
+                Hey I'm
+                <span>Paulo</span>
+            </h1>
+            <div class="typewriter">
+                I'm
+                <span class="typewriter-text"></span>
+                <label></label>
+            </div>
+            <p>"Highly motivated and adaptable individual who thrives in dynamic environments, consistently seeking opportunities to grow both professionally and personally. With a strong commitment to excellence, I bring not only technical expertise but also a collaborative mindset, ensuring that every project I undertake is completed with precision, creativity, and a drive to exceed expectations."</p>
+
+            <div class="social-links"> 
+                <a href="#"><i class="fa-brands fa-github"></i></a>
+                <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                <a href="#"><i class="fa-brands fa-youtube"></i></a>
+            </div>
+
+            <div class="btn">
+                <button>Hire me</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- About Section -->
+<section class="about" id="about">
+    <div class="content">
+        <div class="title"><span>About Me</span></div>
+        <div class="about-details">
+            <div class="left">
+                <img src="main.jpg" alt="Paulo">
+            </div>
+            <div class="right">
+                <div class="topic">Design Is My Hobby</div>
+                <p>"Code is the bridge between ideas and reality; design is the path that makes the journey worthwhile."</p>
+                <div class="button">
+                    <button>Download CV</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Skills Section -->
+<section class="skills" id="skills">
+    <div class="content">
+        <div class="title"><span>My Skills</span></div>
+        <div class="skills-details">
+            <div class="text">
+                <div class="topic">Skills Reflect Our Knowledge</div>
+                <p data-aos="fade-right">"Code is the bridge between ideas and reality; design is the path that makes the journey worthwhile."</p>
+                <div class="experience">
+                    <div class="num">0</div>
+                    <div class="exp">Years Of <br> Experience</div>
+                </div>
+            </div>
+            <div class="boxes">
+                <div class="box"><div class="topic">HTML</div><div class="per">20%</div></div>
+                <div class="box"><div class="topic">CSS</div><div class="per">20%</div></div>
+                <div class="box"><div class="topic">JS</div><div class="per">10%</div></div>
+                <div class="box"><div class="topic">PHP</div><div class="per">10%</div></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Services Section -->
+<section class="services" id="services">
+    <div class="content">
+        <div class="title"><span>My Services</span></div>
+        <div class="boxes">
+            <div class="box"><div class="icon"><i class="fas fa-desktop"></i></div><div class="topic">Web Development</div><p>"Web development transforms concepts into functional, user-friendly websites..."</p></div>
+            <div class="box"><div class="icon"><i class="fas fa-paint-brush"></i></div><div class="topic">Graphic Design</div><p>"Graphic design communicates ideas visually..."</p></div>
+            <div class="box"><div class="icon"><i class="fas fa-chart-line"></i></div><div class="topic">Digital Marketing</div><p>"Digital marketing harnesses online channels to promote brands..."</p></div>
+            <div class="box"><div class="icon"><i class="fas fa-cloud"></i></div><div class="topic">Icon Design</div><p>"Icon design distills ideas into simple, recognizable symbols..."</p></div>
+            <div class="box"><div class="icon"><i class="fas fa-gamepad"></i></div><div class="topic">Game Developer</div><p>"Game development merges storytelling, design, and technology..."</p></div>
+        </div>
+    </div>
+</section>  
+
+<!-- Contact Section -->
+<section class="contact" id="contact">
+    <div class="content">
+        <div class="title"><span>Contact Me</span></div> 
+        <div class="text">
+            <div class="topic">Have Any Project</div> 
+            <p>"Code is the bridge between ideas and reality; design is the path that makes the journey worthwhile."</p>
+            <div class="button">
+                <a href="index2.html" target="_blank">
+                    <button>Let's Chat</button>  
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <div class="text">
+        <span>Created By <a href="#">Paulo</a> &#169; 2025 All Rights Reserved</span>
+    </div>
+</footer>
+
+<script>
+function hamburg() {
+    document.getElementById("dropdown").style.transform = "translateY(0)";
+}
+function cancel() {
+    document.getElementById("dropdown").style.transform = "translateY(-500px)";
+}
+</script>
+
+</body>
+</html>
