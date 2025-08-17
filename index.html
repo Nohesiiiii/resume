@@ -6,7 +6,98 @@
     <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RESUME</title>
-    <link rel="icon" type="image/png" href="main.jpg">
+    <link rel="icon" type="image/png" href="image/main.jpg">
+    <style>
+        /* Chatbox Styles */
+        .chatbox {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 320px;
+            background: #fff;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+            display: none;
+            flex-direction: column;
+            box-shadow: 0px 4px 10px rgba(0,0,0,0.3);
+            z-index: 999;
+        }
+        .chatbox-header {
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px 8px 0 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .chatbox-body {
+            padding: 10px;
+        }
+        .chatbox-body input, 
+        .chatbox-body textarea {
+            width: 100%;
+            margin-bottom: 8px;
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .chatbox-body button {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            background: #333;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .chatbox-body button:hover {
+            background: #555;
+        }
+        /* Project Section Styles */
+        #project {
+            background-color: #000;
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+        }
+        .project-container {
+            flex:1;
+            min-width:300px;
+            max-width:350px;
+            margin:10px;
+            text-align:center;
+        }
+        .project-container img {
+            width:100px;
+            margin-bottom:10px;
+        }
+        .project-container h2 {
+            margin-bottom:10px;
+        }
+        .calculator button, #tictactoe-board .cell {
+            width: 50px;
+            height: 50px;
+            font-size: 18px;
+            margin: 2px;
+            cursor: pointer;
+        }
+        #display {
+            width: 220px;
+            height: 35px;
+            font-size: 18px;
+            margin-bottom: 10px;
+            text-align: right;
+            padding-right: 5px;
+        }
+        #tictactoe-board {
+            display: grid;
+            grid-template-columns: repeat(3, 60px);
+            gap: 5px;
+            justify-content: center;
+            margin: 10px auto;
+        }
+    </style>
 </head>
 <body>
 
@@ -14,48 +105,44 @@
     <nav>
         <div class="nav-container">   
             <div class="logo">
-                <span>PAULO</span>
+                <span>CHRISTIAN PAULO FLORES</span>
             </div>
             <div class="links">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Skills</a>
-                <a href="#">Services</a>
-                <a href="#">Contact</a>
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#skills">Skills</a>
+                <a href="#services">Services</a>
+                <a href="#project">Project</a>
             </div>
             <i class="fa-solid fa-bars hamburg" onclick="hamburg()"></i>
         </div>
 
         <div class="dropdown" id="dropdown">
             <div class="links">
-                <a href="#">Home</a>
-                <a href="#">About</a>
-                <a href="#">Skills</a>
-                <a href="#">Services</a>
-                <a href="#">Contact</a>
+                <a href="#home" onclick="cancel()">Home</a>
+                <a href="#about" onclick="cancel()">About</a>
+                <a href="#skills" onclick="cancel()">Skills</a>
+                <a href="#services" onclick="cancel()">Services</a>
+                <a href="#project" onclick="cancel()">Project</a>
                 <i class="fa-solid fa-xmark cancel" onclick="cancel()"></i>
             </div>
         </div>
     </nav>
 </header>
 
-<section>   
+<!-- Home Section -->
+<section id="home">   
     <div class="main-container">
         <div class="image">
-            <img src="main.jpg" alt="Paulo">
+            <img src="image/pics.jpg" alt="Paulo">
         </div>
-
         <div class="content">
-            <h1 data-aos="fade-left">
-                Hey I'm
-                <span>Paulo</span>
-            </h1>
+            <h1>Hey I'm <span>Paulo</span></h1>
             <div class="typewriter">
-                I'm
-                <span class="typewriter-text"></span>
+                I'm <span class="typewriter-text"></span>
                 <label></label>
             </div>
-            <p>"Highly motivated and adaptable individual who thrives in dynamic environments, consistently seeking opportunities to grow both professionally and personally. With a strong commitment to excellence, I bring not only technical expertise but also a collaborative mindset, ensuring that every project I undertake is completed with precision, creativity, and a drive to exceed expectations."</p>
+            <p>"Highly motivated and adaptable individual who thrives in dynamic environments, consistently seeking opportunities to grow both professionally and personally."</p>
 
             <div class="social-links"> 
                 <a href="#"><i class="fa-brands fa-github"></i></a>
@@ -64,7 +151,7 @@
             </div>
 
             <div class="btn">
-                <button>Hire me</button>
+               <button class="hire-btn" onclick="openChatbox()">Hire me</button>
             </div>
         </div>
     </div>
@@ -76,7 +163,7 @@
         <div class="title"><span>About Me</span></div>
         <div class="about-details">
             <div class="left">
-                <img src="main.jpg" alt="Paulo">
+                <img src="image/pics.jpg" alt="Paulo">
             </div>
             <div class="right">
                 <div class="topic">Design Is My Hobby</div>
@@ -96,7 +183,7 @@
         <div class="skills-details">
             <div class="text">
                 <div class="topic">Skills Reflect Our Knowledge</div>
-                <p data-aos="fade-right">"Code is the bridge between ideas and reality; design is the path that makes the journey worthwhile."</p>
+                <p>"Code is the bridge between ideas and reality; design is the path that makes the journey worthwhile."</p>
                 <div class="experience">
                     <div class="num">0</div>
                     <div class="exp">Years Of <br> Experience</div>
@@ -126,18 +213,51 @@
     </div>
 </section>  
 
-<!-- Contact Section -->
-<section class="contact" id="contact">
-    <div class="content">
-        <div class="title"><span>Contact Me</span></div> 
-        <div class="text">
-            <div class="topic">Have Any Project</div> 
-            <p>"Code is the bridge between ideas and reality; design is the path that makes the journey worthwhile."</p>
-            <div class="button">
-                <a href="index2.html" target="_blank">
-                    <button>Let's Chat</button>  
-                </a>
+<!-- Project Section -->
+<section id="project">
+    <div class="content" style="display:flex; justify-content:center; align-items:flex-start; flex-wrap:wrap; gap:20px;">
+        <!-- Project 1: Calculator -->
+        <div class="project-container">
+            <img src="image/calcu.webp" alt="Calculator Logo">
+            <h2>Simple Calculator</h2>
+            <input type="text" id="display" disabled>
+            <div class="calculator">
+                <button onclick="clearDisplay()">C</button>
+                <button onclick="appendNumber('7')">7</button>
+                <button onclick="appendNumber('8')">8</button>
+                <button onclick="appendNumber('9')">9</button>
+                <button onclick="appendOperator('+')">+</button><br>
+                <button onclick="appendNumber('4')">4</button>
+                <button onclick="appendNumber('5')">5</button>
+                <button onclick="appendNumber('6')">6</button>
+                <button onclick="appendOperator('-')">-</button><br>
+                <button onclick="appendNumber('1')">1</button>
+                <button onclick="appendNumber('2')">2</button>
+                <button onclick="appendNumber('3')">3</button>
+                <button onclick="appendOperator('*')">*</button><br>
+                <button onclick="appendNumber('0')">0</button>
+                <button onclick="appendOperator('/')">/</button>
+                <button onclick="calculate()">=</button>
             </div>
+        </div>
+
+        <!-- Project 2: Tic-Tac-Toe -->
+        <div class="project-container">
+            <img src="image/tic.jpg" alt="TicTacToe Logo">
+            <h2>Tic-Tac-Toe</h2>
+            <div id="tictactoe-board">
+                <button class="cell" onclick="playerMove(0)"></button>
+                <button class="cell" onclick="playerMove(1)"></button>
+                <button class="cell" onclick="playerMove(2)"></button>
+                <button class="cell" onclick="playerMove(3)"></button>
+                <button class="cell" onclick="playerMove(4)"></button>
+                <button class="cell" onclick="playerMove(5)"></button>
+                <button class="cell" onclick="playerMove(6)"></button>
+                <button class="cell" onclick="playerMove(7)"></button>
+                <button class="cell" onclick="playerMove(8)"></button>
+            </div>
+            <p id="tictactoe-status"></p>
+            <button onclick="resetBoard()">Restart</button>
         </div>
     </div>
 </section>
@@ -148,13 +268,81 @@
     </div>
 </footer>
 
+<!-- Chatbox -->
+<div class="chatbox" id="chatbox">
+    <div class="chatbox-header">
+        <span>Let's Chat 💬</span>
+        <i class="fa-solid fa-xmark" style="cursor:pointer;" onclick="closeChatbox()"></i>
+    </div>
+    <div class="chatbox-body">
+        <form id="chatbox-form">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="text" name="title" placeholder="Subject / Title" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" placeholder="Message" required></textarea>
+            <button type="submit">Send</button>
+        </form>
+        <p id="chatbox-status" style="margin-top:8px; color:green; display:none;">✅ Message Sent!</p>
+    </div>
+</div>
+
+<!-- EmailJS SDK -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
 <script>
-function hamburg() {
-    document.getElementById("dropdown").style.transform = "translateY(0)";
+(function(){ emailjs.init("PIYIlG5GODpNkx2Es"); })();
+
+function openChatbox() { document.getElementById("chatbox").style.display = "flex"; }
+function closeChatbox() { document.getElementById("chatbox").style.display = "none"; }
+
+document.getElementById("chatbox-form").addEventListener("submit", function(e){
+    e.preventDefault();
+    emailjs.sendForm("service_opcvi7l","template_ude0e4j",this)
+    .then(()=>{ document.getElementById("chatbox-status").style.display="block"; }, 
+          (error)=>{ alert("❌ Failed to send: "+JSON.stringify(error)); });
+});
+
+function hamburg(){ document.getElementById("dropdown").style.transform="translateY(0)"; }
+function cancel(){ document.getElementById("dropdown").style.transform="translateY(-500px)"; }
+
+// Calculator functions
+let display = document.getElementById('display');
+function appendNumber(num){ display.value += num; }
+function appendOperator(op){ display.value += op; }
+function clearDisplay(){ display.value = ''; }
+function calculate(){ display.value = eval(display.value); }
+
+// Tic-Tac-Toe functions
+let board=["","","","","","","","",""];
+let player="X", bot="O", gameOver=false;
+
+function playerMove(index){
+    if(board[index]==="" && !gameOver){
+        board[index]=player; updateBoard();
+        if(checkWin(player)){ document.getElementById("tictactoe-status").innerText="You Win!"; gameOver=true; return; }
+        if(board.every(cell=>cell!=="")){ document.getElementById("tictactoe-status").innerText="Draw!"; gameOver=true; return; }
+        botMove();
+    }
 }
-function cancel() {
-    document.getElementById("dropdown").style.transform = "translateY(-500px)";
+
+function botMove(){
+    let empty=board.map((v,i)=>v===""?i:null).filter(v=>v!==null);
+    if(empty.length===0) return;
+    let index = empty[Math.floor(Math.random()*empty.length)];
+    board[index]=bot;
+    updateBoard();
+    if(checkWin(bot)){ document.getElementById("tictactoe-status").innerText="Bot Wins!"; gameOver=true; }
 }
+
+function updateBoard(){
+    document.querySelectorAll("#tictactoe-board .cell").forEach((btn,i)=>{ btn.innerText=board[i]; });
+}
+
+function checkWin(p){
+    const winCombos=[[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]];
+    return winCombos.some(combo=>combo.every(i=>board[i]===p));
+}
+
+function resetBoard(){ board=["","","","","","","","",""]; gameOver=false; updateBoard(); document.getElementById("tictactoe-status").innerText=""; }
 </script>
 
 </body>
